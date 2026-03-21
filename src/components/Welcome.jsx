@@ -12,7 +12,7 @@ const renderText = (text, className, baseWeight = 400) => {
         <span key={i}
               className={className}
               style={{fontVariationSettings: `"wght" ${baseWeight}`}}>
-            {char === "" ? "\u00A0" : char}
+            {char === " " ? "\u00A0" : char}
         </span>
     ))
 }
@@ -64,12 +64,12 @@ const Welcome = () => {
         <section id="welcome">
             <p ref={subtitleRef}>
                 {renderText(' Hey , I am Ankit ,Welcome to my',
-                    "text-3xl font-georama text-white")}
+                    "text-3xl font-georama text-white",100)}
             </p>
             <h1 ref={titleRef}>
                 {renderText("Portfolio", "text-9xl italic font-georama text-white")}
             </h1>
-            <div className={`small-screen`}>
+            <div className="small-screen">
                 <p>This portfolio is designed for desktop/tablet screen only.</p>
             </div>
         </section>
