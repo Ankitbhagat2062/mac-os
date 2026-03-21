@@ -1,5 +1,6 @@
 import Navbar from "@components/Navbar.jsx";
 import Welcome from "@components/Welcome.jsx";
+import Dock from "@components/Dock.jsx";
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
               <Navbar />
               <main className="flex-1 h-auto flex-center flex-col">
                   <Welcome />
+                  <Dock />
               </main>
           </div>
       </>
