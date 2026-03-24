@@ -1,6 +1,6 @@
 # Dock Toggle Fix Progress
 
-- [ ] 1. Create TODO.md ✅
+- [x] 1. Create TODO.md
 - [ ] 2. Fix toggleApp function logic and remove console statements
 - [ ] 3. Fix onClick to pass correct app object
 - [ ] 4. Add active state visual feedback

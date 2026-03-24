@@ -1,16 +1,15 @@
 import React, {useLayoutEffect} from 'react'
 import useWindowStore from "@store/window.js";
 import {useGSAP} from "@gsap/react";
+import {gsap} from "gsap";
 import {Draggable} from "gsap/Draggable";
 
 const WindowWrapper = (Component, windowKey) => {
     const Wrapped = (props) =>{
         const {focusWindow , windows } = useWindowStore();
-        const { isOpen , zIndex } = windows[windowKey];
+
         const ref = React.useRef(null);
-        const windowState = windows[windowKey];
-        if (!windowState) return null;
-        if (!windowState.isOpen) return null;  // Conditional rendering
+        const { isOpen , zIndex } = windows[windowKey];
 
         useGSAP(()=>{
             const el = ref.current;
@@ -25,7 +24,7 @@ const WindowWrapper = (Component, windowKey) => {
 
         useGSAP(()=>{
             const el = ref.current;
-            if(!el || isOpen && windowState.isOpen) return ;
+            if(!el || isOpen) return ;
             const [instance] = Draggable.create(el,{onPress:()=>focusWindow(windowKey)});
             return ()=> instance.kill();
         },[])
