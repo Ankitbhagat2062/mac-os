@@ -1,5 +1,13 @@
-import { Navbar ,Welcome ,Dock } from "@components/index.js";
-import { TerminalWindow } from "@windows/index.js";
+import {Navbar, Welcome, Dock, Home} from "@components/index.js";
+import {
+    ContactWindow,
+    FinderWindow,
+    ImageFileWindow, PhotosWindow,
+    ResumeWindow,
+    SafariWindow,
+    TerminalWindow,
+    TxtFileWindow
+} from "@windows/index.js";
 
 import {gsap} from "gsap";
 import {Draggable} from "gsap/Draggable";
@@ -14,6 +22,14 @@ function App() {
                     <Welcome />
                     <Dock />
                     <TerminalWindow />
+                    <SafariWindow />
+                    <ResumeWindow />
+                    <FinderWindow />
+                    <TxtFileWindow />
+                    <ImageFileWindow />
+                    <ContactWindow />
+                    <PhotosWindow />
+                    <Home />
                 </main>
             </div>
         </>
