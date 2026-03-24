@@ -1,8 +1,8 @@
-import { Navbar ,Welcome ,Dock } from "@components/index.js";
+import {Navbar, Welcome, Dock, Home} from "@components/index.js";
 import {
     ContactWindow,
     FinderWindow,
-    ImageFileWindow,
+    ImageFileWindow, PhotosWindow,
     ResumeWindow,
     SafariWindow,
     TerminalWindow,
@@ -28,6 +28,8 @@ function App() {
                     <TxtFileWindow />
                     <ImageFileWindow />
                     <ContactWindow />
+                    <PhotosWindow />
+                    <Home />
                 </main>
             </div>
         </>

@@ -4,10 +4,12 @@ import {gsap} from "gsap";
 import {useGSAP} from "@gsap/react";
 
 import useWindowStore from "@store/window.js";
-import {dockApps} from "@constants/index.js";
+import {dockApps, TRASH_LOCATION} from "@constants/index.js";
+import useLocationStore from "@store/location.js";
 
 const Dock = () => {
     const { openWindow , closeWindow , windows } = useWindowStore();
+    const { setActiveLocation } = useLocationStore();
     const dockRef = useRef(null);
 
     useGSAP(()=>{
@@ -53,21 +55,28 @@ const Dock = () => {
             dock.removeEventListener("mouseleave", resetIcons)
         }
     },[])
-
     const toggleApp =(app)=>{
         if(!app.canOpen) return ()=>{};
+
+        if (app.id === "trash") {
+            setActiveLocation(TRASH_LOCATION);
+            openWindow("finder");
+            return;
+        }
+
         const window = windows[app.id];
-        if(!window) {
+        if (!window) {
             console.error(`Windows not found for ${app.id}!`);
             return;
         }
 
-        if(window.isOpen){
+        if (window.isOpen) {
             closeWindow(app.id);
-        }else {
+        } else {
             openWindow(app.id);
         }
     }
+
     return (
         <section id="dock">
             <div ref={dockRef} className="dock-container">

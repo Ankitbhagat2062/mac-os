@@ -47,7 +47,7 @@ const Finder = () => {
                     {renderList('Work',locations.work.children)}
                 </div>
                 <ul className="content">
-                    {activeLocation.children.map((item, index) => (
+                    {activeLocation?.children.map((item, index) => (
                         <li key={index} className={item.position} onClick={()=>openItem(item)}>
                             <img src={item.icon} alt={item.name} className="icon" />
                             <p>{item.name}</p>
