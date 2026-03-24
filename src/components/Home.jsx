@@ -22,7 +22,7 @@ const Home = () => {
             <section id="home">
                 {projects.map((project) => (
                     <li key={project.id} onClick={()=> handleOpenProject(project)}
-                        className={clsx("list-none group folder",project.windowPosition)}>
+                        className={`${clsx("group folder",project.windowPosition)}`}>
                         <img src="/images/folder.png" alt={project.name} />
                         <p>{project.name}</p>
                     </li>

@@ -4,8 +4,10 @@ import {WindowControls} from "@components/index.js";
 import {Mail, Search} from "lucide-react";
 import {gallery, photosLinks} from "@constants/index.js";
 import clsx from "clsx";
+import useWindowStore from "@store/window.js";
 
 const Photos = () => {
+    const { openWindow } = useWindowStore();
     return (
         <>
             <div id="window-header">
@@ -53,7 +55,7 @@ const Photos = () => {
                                 <img
                                     src={photo.img}
                                     alt={`Photo ${photo.id}`}
-                                    className="w-100 h-50 object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110"
+                                    className="w-96 h-48 object-cover rounded-2xl transition-transform duration-500 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0  bg-linear-to-t from-black/60 via-transparent to-transparent
                                 opacity-10 group-hover:opacity-100

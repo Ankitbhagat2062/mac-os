@@ -38,7 +38,7 @@ const Safari = () => {
                             <div className="content">
                                 <p>{date}</p>
                                 <h3>{title}</h3>
-                                <a href={link} target="_blank" rel="noopener noreferer">
+                                <a href={link} target="_blank" rel="noopener noreferrer">
                                     CheckOut full post <MoveRight className="icon-hover"/>
                                 </a>
                             </div>

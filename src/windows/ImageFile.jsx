@@ -5,8 +5,7 @@ import {Image} from "lucide-react";
 import useWindowStore from "@store/window.js";
 
 const ImageFile = () => {
-    const { windows } = useWindowStore();
-    const item = windows?.imgfile.data
+    const item = useWindowStore((state) => state.windows?.imgfile?.data);
     // Return null if no item data
     if (!item) return null;
 

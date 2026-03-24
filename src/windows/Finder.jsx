@@ -18,11 +18,13 @@ const Finder = () => {
             <h3>{name}</h3>
             <ul>
                 {items.map((item, index) => (
-                  <li key={index} className={clsx(item.id === activeLocation.id ? "active" : "not-active")}
-                       onClick={()=>handleClick(item)}>
-                      <img src={item.icon} alt={item.name} className="w-4" />
-                      <p className="text-sm font-medium truncate">{item.name}</p>
-                  </li>
+                    <li key={index} className={clsx(item.id === activeLocation.id ? "active" : "not-active")}>
+                        <button type="button" onClick={() => handleClick(item)}
+                                className="w-full flex items-center gap-2">
+                            <img src={item.icon} alt={item.name} className="w-4"/>
+                            <p className="text-sm font-medium truncate">{item.name}</p>
+                        </button>
+                    </li>
                 ))}
             </ul>
         </div>
@@ -48,9 +50,11 @@ const Finder = () => {
                 </div>
                 <ul className="content">
                     {activeLocation?.children.map((item, index) => (
-                        <li key={index} className={item.position} onClick={()=>openItem(item)}>
-                            <img src={item.icon} alt={item.name} className="icon" />
-                            <p>{item.name}</p>
+                        <li key={index} className={item.position}>
+                            <button type="button" onClick={() => openItem(item)} className="flex flex-col items-center">
+                                <img src={item.icon} alt={item.name} className="icon"/>
+                                <p>{item.name}</p>
+                            </button>
                         </li>
                     ))}
                 </ul>

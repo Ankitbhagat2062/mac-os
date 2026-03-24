@@ -6,7 +6,7 @@ import useWindowStore from "@store/window.js";
 
 const TxtFile = () => {
     const { windows } = useWindowStore();
-    const item = windows?.txtfile.data
+    const item = windows?.txtfile?.data
     // Return null if no item data
     if (!item) return null;
 

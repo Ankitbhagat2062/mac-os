@@ -17,9 +17,14 @@ const WindowWrapper = (Component, windowKey) => {
                 el.style.display = "block";
                 gsap.fromTo(el, {scale: 0.8, opacity: 0, y:40}, {scale: 1, opacity: 1, y:0, duration:0.4});
             } else {
-                el.style.display = "none";
-                // Optional:
-                gsap.to(el, {scale: 0.8, opacity: 0, duration: 0.2}); //before display:none
+                gsap.to(el, {
+                    scale: 0.8,
+                    opacity: 0,
+                    duration: 0.2,
+                    onComplete: () => {
+                        el.style.display = "none";
+                    }
+                });
             }
         },[isOpen]);
         useGSAP(()=>{
