@@ -1,7 +1,9 @@
-# Dock Toggle Fix Progress
+# Task: Create ImageFile window like TxtFile rendering title and image from imageUrl
 
-- [x] 1. Create TODO.md
-- [ ] 2. Fix toggleApp function logic and remove console statements
-- [ ] 3. Fix onClick to pass correct app object
-- [ ] 4. Add active state visual feedback
-- [ ] 5. Test and complete
+## Steps:
+- [x] Create TODO.md
+- [ ] Create src/windows/ImageFile.jsx (Image viewer window component)
+- [ ] Update src/windows/index.js (export ImageFileWindow)
+- [ ] Verify Finder opens "imgfile" for fileType:"img" files
+- [ ] Test: Run dev server, open Finder, click image file (e.g., nike.png)
+- [ ] Complete task
