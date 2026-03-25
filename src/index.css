@@ -12,8 +12,11 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-.group{
+#home ul,
+#photos .sidebar ul li, .group{
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 @theme {
   --font-georama: "Georama", sans-serif;
